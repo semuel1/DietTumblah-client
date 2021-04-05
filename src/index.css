@@ -11,3 +11,38 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 5%;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+nav ul li{
+  text-decoration: none;
+  display: inline-block;
+}
+nav a {
+  text-decoration: none;
+  margin-right: 15px;
+  color: rebeccapurple;
+}
+
+nav a:hover {
+  color: burlywood;
+}
+
+#login {
+  width: 50%;
+  max-width: 500px;
+  border: 1px solid grey;
+  box-shadow: 1px 1px 1px black;
+  border-radius: 5px;
+  padding: 2%;
+}
