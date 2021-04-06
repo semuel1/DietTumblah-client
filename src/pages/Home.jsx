@@ -1,7 +1,7 @@
 const Home = props => {
     return (
         <div>
-            Home page!
+            <h1>Home Page!</h1>
         </div>
     )
 }
