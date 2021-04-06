@@ -47,7 +47,7 @@ const App = () => {
                         <SaveToken setUser={setUser} />
                     </Route>
                     <Route>
-                        <Profile />
+                        <Profile user={user} />
                     </Route>
                     <Route path="*">
                         <NoMatch />
