@@ -13,6 +13,7 @@ const handleGoogleClick = async e => {
 
 const handleGithubClick = e => {
     console.log('Github Clicked!')
+    window.location.href=`${SERVER_URL}/auth/github`
 }
 
 const Login = ({ user }) => {
