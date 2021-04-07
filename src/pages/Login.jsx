@@ -1,4 +1,5 @@
 import { Redirect } from 'react-router'
+// handy style-only buttons from a 3rd party module
 import { 
     GithubLoginButton, 
     GoogleLoginButton 
@@ -6,13 +7,14 @@ import {
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
 
-const handleGoogleClick = async e => {
-    console.log('Google Clicked!')
+const handleGoogleClick = e => {
+    // console.log('Google Clicked!')
+    // Manually redirect the page to the server's google oauth endpoint
     window.location.href = `${SERVER_URL}/auth/google`
 }
 
 const handleGithubClick = e => {
-    console.log('Github Clicked!')
+    // console.log('Github Clicked!')
     window.location.href=`${SERVER_URL}/auth/github`
 }
 

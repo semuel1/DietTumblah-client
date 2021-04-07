@@ -16,6 +16,7 @@ import Profile from "./pages/Profile"
 const App = () => {
     const [user, setUser] = useState(null)
 
+    // 'Login' the user from JWT if it exists in localStorage
     useEffect(() => {
         const token = localStorage.getItem('jwt')
         if(token) {
