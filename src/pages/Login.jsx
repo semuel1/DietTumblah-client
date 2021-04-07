@@ -19,7 +19,6 @@ const handleGithubClick = e => {
 }
 
 const Login = ({ user }) => {
-    console.log(user)
     if(user) {
         return <Redirect to={{ pathname: '/' }}/>
     } else {

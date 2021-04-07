@@ -13,9 +13,8 @@ const SaveToken = ({ setUser }) => {
         localStorage.setItem('jwt', token)
         const user = jwtDecode(token)
         setUser(user)
-    }, [props, token])
+    }, [setUser, token])
 
-    console.log(token)
     if(token) {
         return <Redirect to="/" />
     } else {
