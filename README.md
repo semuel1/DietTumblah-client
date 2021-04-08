@@ -17,7 +17,7 @@ This is a boilerplate for a React App using JWTs for Authorization, and using `r
 
 
 # Installation
-## 1. Fork the repo, then clone it down to your local machine
+## 1. Clone the repo down to your local machine
 `git clone <repo_link> <new_name>`
 
 ## 2. Install dependencies
