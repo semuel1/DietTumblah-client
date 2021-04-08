@@ -8,7 +8,7 @@ import Navbar from "./components/Navbar"
 import Home from "./pages/Home"
 import Login from "./pages/Login"
 import SaveToken from "./pages/SaveToken"
-import jwtDecode from "jwt-decode"
+import jwt from 'jsonwebtoken'
 import NoMatch from "./pages/NoMatch"
 import Profile from "./pages/Profile"
 
@@ -19,10 +19,17 @@ const App = () => {
     // 'Login' the user from JWT if it exists in localStorage
     useEffect(() => {
         const token = localStorage.getItem('jwt')
-        if(token) {
-            const user = jwtDecode(token)
-            // console.log('Ther user from token', user)
-            setUser(user)
+        try { 
+            if(token) {
+                const user = jwt.decode(token)
+                // console.log('Ther user from token', user)
+                setUser(user)
+            }
+        } catch(err) {
+            console.log(err)
+            console.log('the token is expired!')
+            localStorage.removeItem('jwt')
+            setUser(null)
         }
     }, [])
 

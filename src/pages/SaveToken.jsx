@@ -1,5 +1,5 @@
 import { Redirect, useLocation } from "react-router"
-import jwtDecode from 'jwt-decode'
+import jwt from 'jsonwebtoken'
 import { useEffect } from "react"
 
 // The server will redirect to this client endpoint w/ the token in the URL as a query param
@@ -11,7 +11,9 @@ const SaveToken = ({ setUser }) => {
     
     useEffect(() => {
         localStorage.setItem('jwt', token)
-        const user = jwtDecode(token)
+        const user = jwt.decode(token)
+        // console.log('the token', token)
+        // console.log('the user', user)
         setUser(user)
     }, [setUser, token])
 
