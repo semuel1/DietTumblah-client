@@ -21,7 +21,7 @@ const App = () => {
         const token = localStorage.getItem('jwt')
         if(token) {
             const user = jwtDecode(token)
-            console.log(user)
+            // console.log('Ther user from token', user)
             setUser(user)
         }
     }, [])
