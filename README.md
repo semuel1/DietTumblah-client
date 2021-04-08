@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# OAuth Boilerplate - Client
+This is a boilerplate for a React App using JWTs for Authorization, and using `react-router-dom` for client-side routing. Connect this app to the OAuth Boilerplate Server.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Login Screen
+![login](./readme_images/login.png)
 
-In the project directory, you can run:
+## Routes
 
-### `npm start`
+| Route | Component | Purpose |
+| ------ | ---------------------- | ---------------------------- |
+| `/` | Home | Home Page! |
+| `/login` | Login | Login Page! |
+| `/profile` | Profile | Show the contents of the user's data from JWT |
+| `/saveToken` | saveToken | Handles redirect from server and saves JWT from queryString to localStorage |
+| `*` | NoMatch` | 404 Page to handle all other incorrect routes |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Installation
+## 1. Fork the repo, then clone it down to your local machine
+`git clone <repo_link> <new_name>`
 
-### `npm test`
+## 2. Install dependencies
+`npm install`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 3. Create `.env.local` file for environment variables
+```
+REACT_APP_SERVER_URL=http://localhost:8000 --- OR the url to your hosted server
+```
 
-### `npm run build`
+## 4. Run the server 
+`npm start`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 5. Delete the origin that points to the boilerplate repository
+Currently if we run this command:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`git remote -v`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+It will show origin as being hooked up to the boilerplate repository. We want a fresh repository instead, so let's delete the origin remote:
 
-### `npm run eject`
+`git remote remove origin`
+## 6. Create an empty git repository
+Via the Github website. Follow directions as they show up when you create a new repository:
+```
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin <new_repo_link>
+git push origin main
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
